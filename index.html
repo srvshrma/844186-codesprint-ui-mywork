@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.sidenav {
+	height: 100%;
+	width: 150px; /* Set the width of the sidebar */
+	position: absolute; /* Fixed Sidebar (stay in place on scroll) */
+	z-index: 1; /* Stay on top */
+	top: 50; /* Stay at the top */
+	left: 0;
+	background-color: #FEF5F5; /* Black */
+	overflow-x: hidden; /* Disable horizontal scroll */
+	padding-top: 50px;
+}
+
+.sidenav a {
+	padding: 20px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #A44711;
+	display: block;
+}
+
+.sidenav a:hover {
+	color: #f1f1f1;
+}
+
+.main {
+	margin-left: 160px; /* Same as the width of the sidebar */
+	padding: 0px 10px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+p.oblique {
+  font-style: oblique;
+}
+marquee {
+  text-shadow:5px 5px 10px red;
+}
+marquee{
+      font-size: 15px;
+      font-weight: 600;
+      color: #111;
+      font-family: sans-serif;
+      }
+h3 {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+   color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px darkred;
+}
+
+
+
+</style>
+
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+<title>Landing Page</title>
+</head>
+<body>
+
+	<img src="logo.png" alt="Gift Card" class="rounded-lg" height="150">
+	<marquee>Welcome to Gift Card homepage.</marquee>
+	<nav class="navbar navbar-expand-lg navbar-light"
+		style="background-color: #FEF5F5;>
+  <a class="navbar-brand" href="index.html">Home</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active"><a class="nav-link" href="index.html">Landing
+						Page<span class="sr-only">(current)</span>
+				</a></li>
+				<li class="nav-item "><a class="nav-link" href="orderpage.html"> Place
+						Gift card order</a></li>
+				<li class="nav-item"><a class="nav-link" href="giftcardview.html">View Gift
+						Card orders</a></li>
+				<li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact
+						Us</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="sidenav" >
+		<a href="index.html">Landing Page</a> <a href="orderpage.html"> Place Gift card order</a> <a
+			href="giftcardview.html">View Gift Card orders</a> <a href="ContactUs.html">Contact Us</a>
+	</div>
+	
+	<div class="main" >
+		<br><br>
+				<h3 class="shadow p-3 mb-5 bg-white rounded" ><u><i><b>Introduction</b></i></u></h3>
+	</div>
+	<div class="main">
+	
+		<p class="oblique"><i class="fa fa-quote-left fa-2x fa-pull-left fa-border"></i>
+		A gift card
+			may resemble a credit card or display a specific theme on a plastic
+			card the size of a credit card. The card is identified by a specific
+			number or code, not usually with an individual name, and thus could
+			be used by anybody. They are backed by an on-line electronic system
+			for authorization. Some gift cards can be reloaded by payment and can
+			be used thus multiple times.</p>
+		<p class="oblique">Cards may
+			have a serial number, barcode, magnetic strip, which is read by an
+			electronic credit card machine. Many cards have no value until they
+			are sold, at which time the cashier enters the amount which the
+			customer wishes to put on the card. This amount is rarely stored on
+			the card but is instead noted in the merchant's database, which is
+			cross linked to the card ID. Gift cards thus are generally not
+			stored-value cards as used in many public transport systems or
+			library photocopiers, where a simplified system with no network
+			stores the value only on the card itself. To thwart counterfeiting,
+			the data is encrypted. The magnetic strip is also often placed
+			differently than on credit cards, so they cannot be read or written
+			with standard equipment. Other gift cards may have a set value and
+			need to be activated by calling a specific phone number.</p>
+	</div>
+	<div class="main">
+	<br>
+	<br>
+		<button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href='orderpage.html';return false;">Place
+			Order</button>
+	</div>
+	
+</body>
+</html>
