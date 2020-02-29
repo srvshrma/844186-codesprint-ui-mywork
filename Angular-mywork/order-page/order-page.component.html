@@ -1,0 +1,311 @@
+
+  <app-navbar></app-navbar>
+  <div class="row">
+    <div class="col-lg-3">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-lg-9">
+      <div align="center">
+        <img src="../../../assets/image/logo.png" alt="logo" width="150px" />
+      </div>
+
+      <h1
+        align="center"
+        class="p-3 mb-2 bg-info text-white rounded-pill shadow-lg p-3 mb-5 bg-info rounded"
+      >
+        Place your order
+      </h1>
+
+      <form #orderForm="ngForm" (ngSubmit)="onsubmit(orderForm.value)">
+           {{orderForm.value | json}}
+        <br><br>
+        {{order | json}}
+        <h1>{{ orderForm.valid }}</h1>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for=""><b> First Name</b></label>
+                <input
+                  #firstname="ngModel"
+                  [(ngModel)]="order.firstname"
+                  id="fname"
+                  name="firstname"
+                  type="text"
+                  class="form-control"
+                  [class.is-invalid]="firstname.invalid && firstname.touched"
+                  required
+                />
+
+                <small
+                  class="text-danger"
+                  [class.d-none]="firstname.valid || firstname.untouched"
+                >
+                  *This is required field
+                </small>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <label for=""><b>Last Name</b></label>
+              <input
+                #lastname="ngModel"
+                [(ngModel)]="order.lastname"
+                id="lname"
+                name="lastname"
+                type="text"
+                class="form-control"
+                [class.is-invalid]="lastname.invalid && lastname.touched"
+                required
+              />
+
+              <small
+                class="text-danger"
+                [class.d-none]="lastname.valid || lastname.untouched"
+              >
+                *This is required field
+              </small>
+            </div>
+          </div>
+        
+      
+          <div class="row">
+            <div class="col-lg-6">
+              <label for=""><b>Amount</b></label>
+              <input
+                #inr="ngModel"
+                [(ngModel)]="order.inr"
+                id="amount"
+                name="amount"
+                type="text"
+                class="form-control"
+                [class.is-invalid]="inr.invalid && inr.touched"
+                required
+              />
+
+              <small
+                class="text-danger"
+                [class.d-none]="inr.valid || inr.untouched"
+              >
+                *This is required field
+              </small>
+            </div>
+
+            <br />
+
+            <div class="col-lg-6">
+              <label for=""><b>Paise</b></label>
+              <input
+                #paise="ngModel"
+                [(ngModel)]="order.paise"
+                id="paise"
+                name="paise"
+                type="text"
+                class="form-control"
+                [class.is-invalid]="paise.invalid && paise.touched"
+                required
+              />
+
+              <small
+                class="text-danger"
+                [class.d-none]="paise.valid || paise.untouched"
+              >
+                *This is required field
+              </small>
+            </div>
+          </div>
+        
+
+        <br>
+        <hr>
+        <br>
+        <fieldset>
+          <legend>Shipping Address:</legend>
+          <br>
+          <div class="form-group">
+            <label >Address</label>
+            <input
+              #address1="ngModel"
+              [(ngModel)]="order.address1"
+              name="add1"
+              type="text"
+              class="form-control"
+              id="input_21_addr_line1"
+              placeholder="ex:1234 Main Street"
+             
+              [class.is-invalid]="address1.invalid && address1.touched"
+              required
+             
+            />
+          </div>
+
+          <div class="form-group">
+            <label >Address 2</label>
+            <input
+              #address2="ngModel"
+              [(ngModel)]="order.address2"
+              type="text"
+              class="form-control"
+              name="add2"
+              id="input_21_addr_line2"
+              placeholder="Apartment, studio, or floor"
+             
+              [class.is-invalid]="address2.invalid && address2.touched"
+              required
+              
+            />
+          </div>
+        </fieldset>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <select
+              name="country"
+              class="countries"
+              id="countryId"
+            
+            >
+              <option value="">choose</option>
+            </select>
+            <br />
+            <label>Countries</label>
+          </div>
+          <div class="form-group col-md-6">
+            <select name="state" class="states" id="stateId">
+              <option value="">choose</option>
+            </select>
+            <br />
+            <label>States</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <select name="city" class="cities" id="cityId">
+              <option value="">choose</option>
+            </select>
+            <br />
+            <label>Cities</label>
+          </div>
+          <div class="col">
+            <label for="inputZip">
+              <input
+                type="number"
+                name="zip"
+                class="form-control"
+                id="inputZip"
+                maxlength="6"
+              />Zip
+            </label>
+          </div>
+        </div>
+        <br>
+        <hr>
+<br>
+<legend>Buyer Details:</legend>
+<br>
+        <div class="form-row">
+          <div class="col">
+            <div class="form-group">
+              <label for=""><b> First Name</b></label>
+              <input
+                #bFname="ngModel"
+                [(ngModel)]="order.bFname"
+                id="bfname"
+                name="bfirstname"
+                type="text"
+                class="form-control"
+                [class.is-invalid]="bFname.invalid && bFname.touched"
+                required
+              />
+
+              <small
+                class="text-danger"
+                [class.d-none]="bFname.valid || bFname.untouched"
+              >
+                *This is required field
+              </small>
+            </div>
+          
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label for=""><b> Last Name</b></label>
+              <input
+                #bLname="ngModel"
+                [(ngModel)]="order.bLname"
+                id="blname"
+                name="blastname"
+                type="text"
+                class="form-control"
+                [class.is-invalid]="bLname.invalid && bLname.touched"
+                required
+              />
+
+              <small
+                class="text-danger"
+                [class.d-none]="bLname.valid || bLname.untouched"
+              >
+                *This is required field
+              </small>
+            </div>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+        <div class="form-group">
+          <label for=""><b> Email</b></label>
+          <input
+            #email="ngModel"
+            [(ngModel)]="order.email"
+            id="email"
+            name="email"
+            type="email"
+            class="form-control"
+            [class.is-invalid]="email.invalid && email.touched"
+            required
+          />
+          <small
+            class="text-danger"
+            [class.d-none]="email.valid || email.untouched"
+          >
+            *This is required
+          </small>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="form-group">
+          <label for=""><b> Phone No</b></label>
+
+          <input
+            #phone="ngModel"
+            [(ngModel)]="order.phone"
+            name="phone"
+            type="tel"
+            class="form-control"
+            [class.is-invalid]="phone.invalid && phone.touched"
+            required
+            pattern="^\d{10}$"
+          />
+
+          <div *ngIf="phone.errors && phone.invalid && phone.touched">
+            <small *ngIf="phone.errors.required" class="text-danger"
+              >This is required field</small
+            >
+            <small *ngIf="phone.errors.pattern" class="text-danger"
+              >Phone is invalid</small
+            >
+          </div>
+        </div>
+      </div>
+      </div>
+        <input
+          type="submit"
+          [disabled]="!orderForm.valid"
+          value="Order"
+          class="btn btn-primary"
+        />
+      </div>
+      </form>
+    </div>
+   
+  </div>
+

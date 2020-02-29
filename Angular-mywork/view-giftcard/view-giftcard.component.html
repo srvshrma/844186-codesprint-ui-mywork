@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<div class="row">
+
+    <div class="col-lg-2">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-lg-10"> 
+<div class="container  text-center" >
+  
+    <h1> Order Details</h1>
+    <br>
+    {{orders.value|json}}
+  <div class="table">
+    <div class="table table-dark table-bordered">
+      <thead>
+        <tr>
+         
+          <th>Buyer's Name</th>
+          <th>Shipping Address</th>
+          <th>City</th>
+          <th>Amount</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{ order.bFname }}</td>
+          <td>{{ order.address1 }}</td>
+          <td>{{ order.city }}</td>
+          <td>{{ order.amount | currency:"INR" }}</td>
+          <td>{{ order.phone }}</td>
+        </tr>
+      </tbody>
+    </div>
+  </div>
+</div>
+
+    </div>
